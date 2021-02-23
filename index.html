@@ -10,6 +10,10 @@
 
 
   <style data-critical="true">
+    body {
+      filter: invert(0.85);
+    }
+
     * {
       border-color: inherit;
     }
@@ -328,7 +332,9 @@
     .theme-light .preview {
       background-color: rgb(255, 255, 255);
       border-color: rgb(230, 229, 229);
-      color: rgb(31, 31, 31)
+      color: rgb(31, 31, 31);
+      padding-left: 10vw !important;
+      padding-right: 10vw !important; 
     }
 
     .theme-light .preview h1,
@@ -845,7 +851,7 @@
       <li>timestamp for time</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>create table table_name(attr_1 data_type,
                         attr_2 data_type
                         ...
@@ -863,7 +869,7 @@
       <li>default(FL)</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>create table table_name(attr_1 data_type primary key,
                         attr_2 data_type not null,
                         attr_3 datay_type default 'default_value',
@@ -884,7 +890,7 @@
       </li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select constraint_name, constraint_type from user_constraints where table_name="OUR_TABLE";
 </code></pre>
     </div>
@@ -895,14 +901,14 @@
     <h4 id="creating-a-table-with-foreign-key-and-creating-a-composite-key">creating a table with
       foreign key and creating a composite key</h4>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>create table doctor(docid int primary key,
                     docname char(40) not null
                     );
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>create table appt(apptdate timestamp,
                   doctorid int refereces doctor(docid),
                   patid int references patient(patid),
@@ -911,7 +917,7 @@
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>create table visit(visitid int,
                    vdt timestamp,
                    docid int,
@@ -926,7 +932,7 @@
       <li>displays not null when some fields does not allow null values</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>desc table_name;
 </code></pre>
     </div>
@@ -935,7 +941,7 @@
       <li>deletes a table</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>drop table table_name;
 </code></pre>
     </div>
@@ -945,7 +951,7 @@
       <li>attribute values should be in the same order</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>insert into table_name values(null, default, ...); 
 </code></pre>
     </div>
@@ -954,7 +960,7 @@
       <li>to view the data of some table</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from table_name;
 </code></pre>
     </div>
@@ -964,7 +970,7 @@
       <li>|| concatenates different things</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select attr_1||attr_2||attr_3.. from table_name; 
 </code></pre>
     </div>
@@ -972,7 +978,7 @@
       <li>or we can use rtrim/ltrim/trim to remove spaces</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select trim(attr_1) from table_name;
 </code></pre>
     </div>
@@ -982,7 +988,7 @@
       <li>deleta all the rows</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>delete from table_name
 </code></pre>
     </div>
@@ -990,7 +996,7 @@
       <li>delete some specific rows;</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>delete from table_name where conditions;
 </code></pre>
     </div>
@@ -999,14 +1005,14 @@
       <li>update some record</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>update table_name set attr=new_value, attr_2=new_value where attr=old_value
 </code></pre>
     </div>
     <h2 id="lec-5-and-lec-6">Lec-5 and Lec-6</h2>
     <h3 id="generalised-select-statement">Generalised select statement</h3>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select distinct field/*/function/expression
 from table_name/subquery
 where condition_on_record_level
@@ -1022,7 +1028,7 @@ order by fieldname/expression/function
     </ul>
     <h3 id="string-functionsrecord-based">String functions(Record based)</h3>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select  upper(patname),
 	      lower(patname),
 	      trim(patname),
@@ -1043,42 +1049,42 @@ order by fieldname/expression/function
       <li>given an attribute with datatype date we can display it in the following waysL</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'dd') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'mm') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'yy') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'yy-mm-dd') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'month') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'dd month yyyy') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'ddth month yyyy') from students2021;
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select stdno, to_char(birtdate, 'ddsp') from students2021; // spelling(sp)
 </code></pre>
     </div>
@@ -1088,12 +1094,12 @@ order by fieldname/expression/function
     </ul>
     <h4 id="in">in</h4>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from patients where patid in (list...);
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from patients where patid in (select patid from appt);
 </code></pre>
     </div>
@@ -1105,13 +1111,13 @@ order by fieldname/expression/function
           <li>% many characters</li>
         </ul>
         <div class="copy-wrapper">
-          <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i>
+          <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i>
           </div>
           <pre><code>select patname from patient where patname like 'x%' or patname like 'X%';
 </code></pre>
         </div>
         <div class="copy-wrapper">
-          <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i>
+          <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i>
           </div>
           <pre><code>select patname from patient where trim(patname) like '%z' or trim(patname) like '%X';
 </code></pre>
@@ -1120,7 +1126,7 @@ order by fieldname/expression/function
           <li>_ single character</li>
         </ul>
         <div class="copy-wrapper">
-          <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i>
+          <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i>
           </div>
           <pre><code>select patname from patient where patname like '_yz';
 </code></pre>
@@ -1129,7 +1135,7 @@ order by fieldname/expression/function
     </ul>
     <h4 id="between">between</h4>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from patient where patid between 1 and 10; // including 1 and 10
 </code></pre>
     </div>
@@ -1147,7 +1153,7 @@ order by fieldname/expression/function
       <li>returns true if any record is there else false</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from patient where exists(select * from appnt);
 </code></pre>
     </div>
@@ -1160,7 +1166,7 @@ order by fieldname/expression/function
       <li>sum</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select avg(field/*), min(field/*), ... ; 
 </code></pre>
     </div>
@@ -1170,7 +1176,7 @@ order by fieldname/expression/function
       <li>simple catesian product</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from patient, appnt; //(patient * appnt)
 </code></pre>
     </div>
@@ -1180,7 +1186,7 @@ order by fieldname/expression/function
       <li>Need to have one common field</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * from patient, appnt where patient.patid=appt.patid;
 </code></pre>
     </div>
@@ -1189,7 +1195,7 @@ order by fieldname/expression/function
       <li>Similar to natural join, but multiple tables</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select patname, docname from patient, doctor where patient.patid = appt.patid and appt.patid = doc.patid;
 </code></pre>
     </div>
@@ -1198,7 +1204,7 @@ order by fieldname/expression/function
       <li>similar output to natural join</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select (list of fields, ... ) form table_1 inner join table_2 on table_1.common_field=table_2.common_field
 </code></pre>
     </div>
@@ -1218,7 +1224,7 @@ order by fieldname/expression/function
       </li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * table_1 left join table_2 on common_field_condition
 </code></pre>
     </div>
@@ -1227,7 +1233,7 @@ order by fieldname/expression/function
       <li>Null for left table, all records of right table</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * table_1 right join table_2 on common_field_condition
 </code></pre>
     </div>
@@ -1271,13 +1277,13 @@ order by fieldname/expression/function
         right_null</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select * table_1 right join table_2 on common_field_condition
 </code></pre>
     </div>
     <h5 id="alias-to-avoid-using-long-table-names">Alias (To avoid using long table names)</h5>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select a.field_1, b.field_2 from table_1 a, table_2 b
 </code></pre>
     </div>
@@ -1288,7 +1294,7 @@ order by fieldname/expression/function
         ...etc )</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select distinct d1.docname, d2.docid form doctor d1, doctor d2 where
 (d1.docname=d2.docname) and (d1.gender &lt;&gt; d2.gender)
 </code></pre>
@@ -1299,21 +1305,21 @@ order by fieldname/expression/function
         have the same type )</li>
     </ul>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select (union_compatible fields, ... ) from table_1 
 interset 
 select (union_compatible fields, ...)  from table_2
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select (union_compatible fields, ... ) from table_1 
 union 
 select (union_compatible fields, ...)  from table_2
 </code></pre>
     </div>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select (union_compatible fields, ... ) from table_1 
 minus 
 select (union_compatible fields, ...)  from table_2
@@ -1321,13 +1327,13 @@ select (union_compatible fields, ...)  from table_2
     </div>
     <h3 id="group-by">Group-By</h3>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div>
       <pre><code>select group_field, count(*) from table group by group_field
 </code></pre>
     </div>
     <h4 id="group-by--having">group by ... having</h4>
     <div class="copy-wrapper">
-      <div class="copy" title="Copy Code to Clipboard">
+      <div class="copy"  onclick="clickHandler(this)" title="Copy Code to Clipboard">
         <i class="icon small">content_copy</i>
       </div>
       <pre>
@@ -1338,7 +1344,11 @@ having our_condition</code></pre>
 
   </div>
 
-
+  <script>
+    function clickHandler(element) {
+      navigator.clipboard.writeText(element.nextElementSibling.textContent);
+    }
+  </script>
 
 </body>
 
